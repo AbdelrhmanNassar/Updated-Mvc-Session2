@@ -4,9 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddControllersWithViews();
 #endregion
 
+
 var app = builder.Build();//this is the kestral
 
-
+app.UseStaticFiles();
 
 //unable routing pipeline  inside the kestral
 app.UseRouting();
@@ -15,7 +16,7 @@ app.UseRouting();
 
 app.MapControllerRoute(
    name: "defalut",
-   pattern: "{controller=Movie}/{action=GetMovie}/{id:int?}"
+   pattern: "{controller=Home}/{action=Index}/{id:int?}"
     );
 
 
