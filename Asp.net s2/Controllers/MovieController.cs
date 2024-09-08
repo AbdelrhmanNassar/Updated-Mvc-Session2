@@ -54,7 +54,7 @@ namespace Asp.net_s2.Controllers
 
         [HttpGet]
         //baseUrl/Movies/Redirect
-        //second way for providing Di
+        //second way for make di provide object from Iconfiguration
         public IActionResult Redirect([FromServices] IConfiguration _configuration)
         {
             RedirectResult obj = new RedirectResult(_configuration["JustRedirection"]!);//give it the key in app setting
